@@ -25,19 +25,49 @@ namespace Lopputyö___Minesweeper
         public int Rows
         {
             get { return rows; }
-            set { rows = value; }
+            set 
+            { 
+                if (value <= 0)
+                {
+                    rows = 9;
+                }
+                else
+                {
+                    rows = value;
+                }
+            }
         }
 
         public int Columns
         {
             get { return columns; }
-            set { columns = value; }
+            set 
+            {
+                if (value <= 0)
+                {
+                    columns = 9;
+                }
+                else
+                {
+                    columns = value;
+                }
+            }
         }
 
         public int MineCount
         {
             get { return mineCount; }
-            set { mineCount = value; }
+            set 
+            {
+                if (value <= 0)
+                {
+                    mineCount = 10;
+                }
+                else
+                {
+                    mineCount = value;
+                }
+            }
         }
 
 
@@ -50,6 +80,11 @@ namespace Lopputyö___Minesweeper
 
             int buttonWidth = 30;
             int buttonHeight = 25;
+
+            if (rows <= 0 || columns <= 0 || mineCount <= 0)
+            {
+                return;
+            }
 
             // Kutsutaan pommien luonti metodia
             GenerateBombs(rows, columns, mineCount);

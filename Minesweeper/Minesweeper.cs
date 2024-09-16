@@ -41,7 +41,8 @@ namespace Lopputyö___Minesweeper
         {
             Easy,
             Medium,
-            Hard
+            Hard,
+            Impossible
         }
         // Vaikeustasot
         //#############################//
@@ -67,6 +68,11 @@ namespace Lopputyö___Minesweeper
                     gameboard.Rows = 30;
                     gameboard.Columns = 16;
                     gameboard.MineCount = 99;
+                    break;
+                case Difficulty.Impossible:
+                    gameboard.Rows = 32;
+                    gameboard.Columns = 32;
+                    gameboard.MineCount = 197;
                     break;
                 default:
                     break;
@@ -173,6 +179,12 @@ namespace Lopputyö___Minesweeper
             gameboard.SetupGameBoard();
             StartTimer();
         }
+        private void impossible_Click(object sender, EventArgs e)
+        {
+            SetDifficulty(Difficulty.Impossible);
+            gameboard.SetupGameBoard();
+            StartTimer();
+        }
         // Vaikeustasot
         //#############################//
 
@@ -254,6 +266,5 @@ namespace Lopputyö___Minesweeper
         {
 
         }
-
     }
 }

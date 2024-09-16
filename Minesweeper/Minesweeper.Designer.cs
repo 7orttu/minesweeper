@@ -34,6 +34,7 @@
             easy = new ToolStripMenuItem();
             medium = new ToolStripMenuItem();
             hard = new ToolStripMenuItem();
+            impossibleToolStripMenuItem = new ToolStripMenuItem();
             revealMenuItem = new ToolStripMenuItem();
             scoresMenuItem = new ToolStripMenuItem();
             labelTime = new Label();
@@ -67,7 +68,7 @@
             // 
             // difficultyToolStripMenuItem
             // 
-            difficultyToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { easy, medium, hard });
+            difficultyToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { easy, medium, hard, impossibleToolStripMenuItem });
             difficultyToolStripMenuItem.Name = "difficultyToolStripMenuItem";
             difficultyToolStripMenuItem.Size = new Size(67, 20);
             difficultyToolStripMenuItem.Text = "Difficulty";
@@ -75,23 +76,30 @@
             // easy
             // 
             easy.Name = "easy";
-            easy.Size = new Size(119, 22);
+            easy.Size = new Size(180, 22);
             easy.Text = "Easy";
             easy.Click += easy_Click;
             // 
             // medium
             // 
             medium.Name = "medium";
-            medium.Size = new Size(119, 22);
+            medium.Size = new Size(180, 22);
             medium.Text = "Medium";
             medium.Click += medium_Click;
             // 
             // hard
             // 
             hard.Name = "hard";
-            hard.Size = new Size(119, 22);
+            hard.Size = new Size(180, 22);
             hard.Text = "Hard";
             hard.Click += hard_Click;
+            // 
+            // impossibleToolStripMenuItem
+            // 
+            impossibleToolStripMenuItem.Name = "impossibleToolStripMenuItem";
+            impossibleToolStripMenuItem.Size = new Size(180, 22);
+            impossibleToolStripMenuItem.Text = "Impossible";
+            impossibleToolStripMenuItem.Click += impossible_Click;
             // 
             // revealMenuItem
             // 
@@ -157,5 +165,6 @@
         private ToolStripMenuItem scoresMenuItem;
         private ComboBox comboBoxScores;
         internal TableLayoutPanel gameLayoutPanel;
+        private ToolStripMenuItem impossibleToolStripMenuItem;
     }
 }
